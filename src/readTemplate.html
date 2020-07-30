@@ -1,0 +1,24 @@
+<html>
+
+<body>
+    content
+    <button type="button" onclick="BeforePage()">上一章</button>
+    <button type="button" onclick="NextPage()">下一章</button>
+</body>
+
+</html>
+<script type="text/javascript">
+    // vscode webview 网页和普通网页的唯一区别：多了一个acquireVsCodeApi方法
+    const vscode = acquireVsCodeApi();
+
+    function BeforePage() {
+        //回到顶部
+        document.documentElement.scrollTop=0
+        vscode.postMessage("link_before");
+    }
+    function NextPage() {
+        //回到顶部
+        document.documentElement.scrollTop=0
+        vscode.postMessage("link_next");
+    }
+</script>
